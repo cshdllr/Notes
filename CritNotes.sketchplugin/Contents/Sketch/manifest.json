@@ -1,0 +1,19 @@
+
+{
+    "name" : "Crit Notes",
+    "identifier" : "my.plugin",
+    "version" : "1.0",
+    "description" : "Quickly take notes in Sketch",
+    "authorEmail" : "jason.cashdollar@gmail.com",
+    "author" : "Jason Cashdollar",
+
+    "commands" : [
+    {
+      "script" : "crit-notes.js",
+      "handler" : "onRun",
+      "shortcut" : "command shift y",
+      "name" : "Crit Notes",
+      "identifier" : "my.plugin.critnotes"
+    }
+  ],
+}
