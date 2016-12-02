@@ -1,6 +1,4 @@
-# Notes
-The world's most advanced note taking plugin for Sketch.
-
+## Notes - The world's most advanced note taking plugin for Sketch.
 ![cover](images/cover.png)
 
 #### WHY IN THE HECK SHOULD I USE THIS?
@@ -13,8 +11,14 @@ Notes is useful for quickly writing down feedback about your designs, to-do list
 3. Double-click Notes.sketchplugin
 4. Wow
 
-#### USAGE (AKA CMD + Y)
-Press CMD + Y to insert a new note.
+#### USAGE (AKA CMD + L)
+Press CMD + L to insert a new note.
 
+#### FUTURE CONSIDERATIONS
+- [ ] Auto-hide all Notes on a page
+- [ ] Dynamic sizing based on view size
+Email me jason.cashdollar@gmail.com if you have any other ideas.
 
-#### Thanks to Zack Schiller for helping me make sense of the poorly documented world of sketch plugins.
+##### Thanks to [Zack Schiller](http://www.google.com/) for helping me make sense of the poorly documented world of sketch plugins.
+
+![cat](images/cat.png)

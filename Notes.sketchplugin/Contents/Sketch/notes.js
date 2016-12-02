@@ -1,22 +1,17 @@
 var onRun = function(context) {
 
-  // todo
-  // [x] get size of view
-  // [x] center note
-  // [x] change color of rectangle
-  // [ ] size rectangle based on view size
-  // [ ] size type based on view size
-  // [ ] place note based on mouse position
-
   const doc = context.document;
-  const docRect = [[doc currentView] visibleContentRect];
+  const view = [[doc currentView] visibleContentRect];
+  const page = doc.currentPage();
 
   const width = 200;
   const height = 200;
-  const x = Math.round(docRect.origin.x + docRect.size.width/2 - width/2);
-  const y = Math.round(docRect.origin.y + docRect.size.height/2 - height/2);
+  const x = Math.round(view.origin.x + view.size.width/2 - width/2);
+  const y = Math.round(view.origin.y + view.size.height/2 - height/2);
   const padding = 10;
+  const noteColor = MSColor.colorWithRed_green_blue_alpha(255/255, 242/255, 133/255, 1.0);
 
+  // the square for the note
   const rectangleLayer = MSRectangleShape.alloc().init();
   rectangleLayer.frame().setWidth(width);
   rectangleLayer.frame().setHeight(height);
@@ -28,10 +23,10 @@ var onRun = function(context) {
   shapeGroup.frame().setX(x);
   shapeGroup.frame().setY(y);
   shapeGroup.setName("Post-it®");
-  const fillType = 0;
+  const styleType = 0; //  0 = fill
   const shadowType = 2;
-  const fill = shapeGroup.style().addStylePartOfType(fillType);
-  fill.color = MSColor.colorWithRed_green_blue_alpha(255/255, 236/255, 77/255, 1.0);
+  const fill = shapeGroup.style().addStylePartOfType(styleType);
+  fill.color = noteColor;
   shapeGroup.style().addStylePartOfType(shadowType);
   shapeGroup.addLayers( [rectangleLayer] );
 
@@ -44,13 +39,14 @@ var onRun = function(context) {
   textLayer.setName("Note");
   const fixedBehaviour = 1;
   textLayer.setTextBehaviour(fixedBehaviour);
-  textLayer.setStringValue('Take some notes');
+  textLayer.setStringValue("Take some notes...");
+  textLayer.setFontSize(14);
 
   const group = MSLayerGroup.alloc().init();
   group.addLayers( [shapeGroup, textLayer] );
   group.setName("Note");
+  page.addLayers( [group] );
 
-  context.document.currentPage().addLayers( [group] );
+  textLayer.select_byExpandingSelection(true,false); // select text layer
 
-  textLayer.select_byExpandingSelection(true,false);
 }

@@ -1,7 +1,5 @@
-
 {
     "name" : "Notes",
-    "identifier" : "my.plugin",
     "version" : "1.0",
     "description" : "Quickly take notes in Sketch",
     "authorEmail" : "jason.cashdollar@gmail.com",
@@ -11,9 +9,8 @@
     {
       "script" : "notes.js",
       "handler" : "onRun",
-      "shortcut" : "command y",
-      "name" : "New Note",
-      "identifier" : "my.plugin.critnotes"
+      "shortcut" : "command l",
+      "name" : "New Note"
     }
   ],
 }
