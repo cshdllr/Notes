@@ -1,16 +1,48 @@
 {
-    "name" : "Notes",
-    "version" : "1.0",
-    "description" : "Quickly take notes in Sketch",
-    "authorEmail" : "jason.cashdollar@gmail.com",
-    "author" : "Jason Cashdollar",
+  "name" : "📝 Notes",
+  "version" : "2.0",
+  "description" : "Quickly take notes in Sketch",
+  "authorEmail" : "jason.cashdollar@gmail.com",
+  "author" : "Jason Cashdollar",
 
-    "commands" : [
+  "commands" : [
     {
       "script" : "notes.js",
-      "handler" : "onRun",
+      "handler" : "newNote",
       "shortcut" : "command l",
+      "identifier": "newNote",
       "name" : "New Note"
+    },
+    {
+      "script" : "hide.js",
+      "handler" : "hideNotes",
+      "shortcut" : "",
+      "identifier": "hideNotes",
+      "name" : "Hide Notes"
+    },
+    {
+      "script" : "hide.js",
+      "handler" : "showNotes",
+      "shortcut" : "",
+      "identifier": "showNotes",
+      "name" : "Show Notes"
+    },
+    {
+      "script" : "settings.js",
+      "handler" : "editSettings",
+      "shortcut" : "",
+      "identifier": "editSettings",
+      "name" : "Settings..."
     }
   ],
+  "menu": {
+    "items": [
+      "newNote",
+      "-",
+      "hideNotes",
+      "showNotes",
+      "-",
+      "editSettings"
+      ]
+    }
 }
