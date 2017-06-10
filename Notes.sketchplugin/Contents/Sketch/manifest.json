@@ -1,10 +1,10 @@
 {
   "name" : "📝 Notes",
-  "version" : "2.0",
   "description" : "Quickly take notes in Sketch",
-  "authorEmail" : "jason.cashdollar@gmail.com",
   "author" : "Jason Cashdollar",
-
+  "authorEmail" : "jason.cashdollar@gmail.com",
+  "version" : "2.0",
+  "identifier" : "com.jasoncashdollar.sketchplugins.notes",
   "commands" : [
     {
       "script" : "notes.js",
