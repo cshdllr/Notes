@@ -66,6 +66,7 @@ var newNote = function(context) {
   group.addLayers( [shapeGroup, textLayer] );
   group.setName("Post-it®");
   page.addLayers( [group] );
+  group.resizeToFitChildrenWithOption(0);
   // add metadata to the layer
   [command setValue:true forKey:"note" onLayer:group];
 
