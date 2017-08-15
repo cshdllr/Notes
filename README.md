@@ -1,5 +1,7 @@
 ![The world's most advanced note taking plugin for Sketch.](images/cover.png)
 
+#### CURRENT VERSION: 2.1
+
 #### NEW IN VERSION 2.0 - The world's most advanced note taking plugin for Sketch just got advanceder
 - Notes in FUN colors
 - Set the resolution you are designing in and get appropriately sized notes
