@@ -3,7 +3,7 @@
   "description" : "Quickly take notes in Sketch",
   "author" : "Jason Cashdollar",
   "authorEmail" : "jason.cashdollar@gmail.com",
-  "version" : "2.1",
+  "version" : "2.2",
   "identifier" : "com.jasoncashdollar.sketchplugins.notes",
   "appcast" : "https://api.sketchpacks.com/v1/plugins/com.jasoncashdollar.sketchplugins.notes/appcast",
   "commands" : [

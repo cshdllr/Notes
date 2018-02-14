@@ -2,6 +2,8 @@ var kNoteScaleKey = "com.jasoncashdollar.sketchplugins.notes.scale";
 var kNoteColorKey = "com.jasoncashdollar.sketchplugins.notes.color";
 
 var editSettings = function(context) {
+  log("open settings");
+  
   // create settings window
   var settingsWindow = COSAlertWindow.new();
   settingsWindow.setMessageText("Notes Settings");
@@ -20,7 +22,7 @@ var editSettings = function(context) {
   
   var scaleOptionsMatrix = NSMatrix.alloc().initWithFrame_mode_prototype_numberOfRows_numberOfColumns(NSMakeRect(0, 0, 300, 22), NSRadioModeMatrix, buttonCell, 1, numOptions);
   scaleOptionsMatrix.setAutorecalculatesCellSize(true);
-  scaleOptionsMatrix.setIntercellSpacing(NSMakeSize(10,10));
+  scaleOptionsMatrix.setIntercellSpacing(NSMakeSize(-50,0));
   var cells = scaleOptionsMatrix.cells();
   var scaleOption;
   
@@ -39,8 +41,9 @@ var editSettings = function(context) {
   
   // note color option
   settingsWindow.addTextLabelWithValue("Note Color");
-  var colorOptionNames = NSArray.arrayWithObjects("Yellow", "Blue", "Green", "Red", "Purple");
-  var colorOptions = NSArray.arrayWithObjects("Yellow", "Blue", "Green", "Red", "Purple");
+  //  NSArray.arrayWithObjects needed to be replaced by arrayWithArray
+  var colorOptionNames = NSArray.arrayWithArray(["Yellow", "Blue", "Green", "Red", "Purple"]);
+  var colorOptions = NSArray.arrayWithArray(["Yellow", "Blue", "Green", "Red", "Purple"]);
   var noteColor = NSUserDefaults.standardUserDefaults().objectForKey(kNoteColorKey) || "Yellow";
   var colorDropdown = NSPopUpButton.alloc().initWithFrame_pullsDown(NSMakeRect(0,0,200,22), false);
   selectedIndex = colorOptions.indexOfObject(noteColor);

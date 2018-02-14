@@ -1,10 +1,10 @@
 var kNoteScaleKey = "com.jasoncashdollar.sketchplugins.notes.scale";
 var kNoteColorKey = "com.jasoncashdollar.sketchplugins.notes.color";
 
-var newNote = function(context) {
-
+var newNote = function (context) {
+  log("starting new note");
   var doc = context.document;
-  var view = [[doc currentView] visibleContentRect];
+  var view = doc.contentDrawView().visibleContentRect();
   var page = doc.currentPage();
   var command = context.command;
   
@@ -36,7 +36,7 @@ var newNote = function(context) {
   rectangleLayer.frame().setWidth(width);
   rectangleLayer.frame().setHeight(height);
   rectangleLayer.cornerRadiusFloat = 2;
-
+  
   var shapeGroup = MSShapeGroup.alloc().init();
   shapeGroup.frame().setWidth(width);
   shapeGroup.frame().setHeight(height);
@@ -48,8 +48,8 @@ var newNote = function(context) {
   var fill = shapeGroup.style().addStylePartOfType(styleType);
   fill.color = noteColor;
   shapeGroup.style().addStylePartOfType(shadowType);
-  shapeGroup.addLayers( [rectangleLayer] );
-
+  shapeGroup.addLayers([rectangleLayer]);
+  
   // the text of the note
   var textLayer = MSTextLayer.alloc().init();
   textLayer.frame().setWidth(width - 2*padding);
@@ -72,4 +72,5 @@ var newNote = function(context) {
 
   // select text layer
   textLayer.select_byExpandingSelection(true, false);
+  log("end note creation");
 }
